@@ -1,10 +1,10 @@
 class PlaylistService {
-  constructor({repository}) {
+  constructor(repository) {
     this._repository = repository;
   }
 
   async export({ playlistId, userId }) {
-    return this._repository.findByPlaylistId({ playlistId, userId });
+    return this._repository.findByPlaylistId(playlistId, userId);
   }
 }
 

@@ -10,6 +10,7 @@ const init = async () => {
   const mail = new Mail();
 
   const mq = new MessageBroker()
+  await mq.init();
   mq.listenMessage('export:playlist',PlaylistModule(mail))
 };
  
