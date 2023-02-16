@@ -1,13 +1,15 @@
 const nodemailer = require('nodemailer');
+
+const Config = require('./Config');
  
 class MailSender {
   constructor() {
     this._transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: process.env.MAIL_PORT,
+      host: Config.mail.MAIL_HOST,
+      port: Config.mail.MAIL_PORT,
       auth: {
-        user: process.env.MAIL_ADDRESS,
-        pass: process.env.MAIL_PASSWORD,
+        user: Config.mail.MAIL_ADDRESS,
+        pass: Config.mail.MAIL_PASSWORD,
       },
     });
   }
