@@ -1,0 +1,24 @@
+{
+  "name": "open-music-export",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "author": "Aslam Pangestu",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production node ./src/server.js",
+    "dev": "nodemon ./src/server.js",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.9.1",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "nodemon": "^2.0.20"
+  }
+}
