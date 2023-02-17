@@ -8,7 +8,7 @@ class MessageBroker {
     this._channels = null;
   }
 
-  async init(){
+  async init() {
     this._connection = await amqp.connect(Config.mq.RABBITMQ_SERVER);
     this._channels = await this._connection.createChannel();
   }

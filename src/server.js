@@ -1,17 +1,16 @@
 require('dotenv').config();
-const amqp = require('amqplib');
 
-const MessageBroker = require('./core/MessageBroker')
+const MessageBroker = require('./core/MessageBroker');
 const Mail = require('./core/Mail');
 
-const PlaylistModule = require("./modules/playlist")
- 
+const PlaylistModule = require('./modules/playlist');
+
 const init = async () => {
   const mail = new Mail();
 
-  const mq = new MessageBroker()
+  const mq = new MessageBroker();
   await mq.init();
-  mq.listenMessage('export:playlist',PlaylistModule(mail))
+  mq.listenMessage('export:playlist', PlaylistModule(mail));
 };
- 
+
 init();

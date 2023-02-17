@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const Config = require('./Config');
- 
+
 class MailSender {
   constructor() {
     this._transporter = nodemailer.createTransport({
@@ -13,8 +13,10 @@ class MailSender {
       },
     });
   }
- 
-  sendEmail({targetEmail,subject,text, attachments}) {
+
+  sendEmail({
+    targetEmail, subject, text, attachments,
+  }) {
     const message = {
       from: 'Open Music',
       to: targetEmail,
@@ -22,9 +24,9 @@ class MailSender {
       text,
       attachments,
     };
- 
+
     return this._transporter.sendMail(message);
   }
 }
- 
+
 module.exports = MailSender;

@@ -5,7 +5,7 @@ const Repository = require('../repositories/PlaylistRepository');
 const PlaylistModule = (mail) => {
   const repository = new Repository();
   const service = new Service(repository);
-  return new Listener(service,mail)
+  return new Listener(service, mail);
 };
 
 module.exports = PlaylistModule;

@@ -21,7 +21,7 @@ class PlaylistRepository {
       WHERE playlists.id = $1`,
       values: [playlistId],
     };
-    
+
     const result = await this._db.query(query);
     const index = result.rows.findIndex((item) => item.user_id === userId);
     const data = result.rows[index];
